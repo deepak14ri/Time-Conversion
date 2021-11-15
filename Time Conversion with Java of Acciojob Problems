@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        
+        int hrvalue = Integer.parseInt(s.substring(0,2));
+        if(s.charAt(8)=='P'){
+            hrvalue%=12;
+            hrvalue+=12;
+            String String_hrvalue = String.valueOf(hrvalue);
+            System.out.println(String_hrvalue+s.substring(2,8));
+        }
+        else{
+            hrvalue%=12;
+            String String_hrvalue = String.valueOf(hrvalue);
+            if(hrvalue<10){
+                String_hrvalue = '0'+String.valueOf(hrvalue);
+            }
+            else{
+                String_hrvalue= String.valueOf(hrvalue);
+            }
+            System.out.println(String_hrvalue+s.substring(2,8));
+        }
+    }
+}
